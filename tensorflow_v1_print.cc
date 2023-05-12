@@ -5,6 +5,11 @@
 // filename: tensors are printed to files which name are filename.tensorout. If filename is empty, tensors are printed to stdout.
 // hash: whether to print the hash of the tensor. It is useful when you want to compare two extremely large tensors.
 
+// shapes of tensors may be lost after this op, so it is recommanded to reshape the tensor after printing
+// _shape = t.shape
+// t = op_module.print_identity(t, msg="t", filename="t", hash=True)
+// t = tf.reshape(t, _shape)
+
 //////////////////////////////////////////////////
 // python file:
 @ops.RegisterGradient("PrintIdentity")
