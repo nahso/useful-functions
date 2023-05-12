@@ -9,6 +9,11 @@
 // _shape = t.shape
 // t = op_module.print_identity(t, msg="t", filename="t", hash=True)
 // t = tf.reshape(t, _shape)
+def tfprint(tensor, msg, filename, hash):
+    _shape = tf.shape(tensor)
+    tensor = op_module.print_identity(tensor, msg, filename, hash)
+    return tf.reshape(tensor, _shape)
+
 
 //////////////////////////////////////////////////
 // python file:
