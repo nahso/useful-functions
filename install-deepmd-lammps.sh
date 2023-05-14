@@ -4,7 +4,9 @@
 #cd ~/lammps
 #wget https://github.com/lammps/lammps/archive/stable_23Jun2022_update4.tar.gz
 #tar xf stable_23Jun2022_update4.tar.gz
-#mkdir lammps-stable_23Jun2022_update4/build && cd $_
+# set lammps_root
+#cd lammps-stable_23Jun2022_update4
+#export lammps_root=$(pwd)
 
 export DP_VARANT=cuda
 export deepmd_source_dir=$HOME/deepmd-kit
