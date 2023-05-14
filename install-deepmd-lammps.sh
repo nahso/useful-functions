@@ -31,3 +31,8 @@ cmake -D PKG_PLUGIN=ON -D PKG_KSPACE=ON -D LAMMPS_INSTALL_RPATH=ON -D BUILD_SHAR
 make -j
 make install
 
+# run lammps
+cd $deepmd_source_dir/examples/water/lmp
+cp <some path>/graph.pb frozen_model.pb
+LD_LIBRARY_PATH=/share/home/duyiming/anaconda3/envs/tf8/lib:/share/home/duyiming/anaconda3/envs/tf8/lib/python3.8/site-packages/tensorflow:$LD_LIBRARY_PATH mpiexec -n 6 $deepmd_root/bin/lmp -i in.plugin.lammps
+
