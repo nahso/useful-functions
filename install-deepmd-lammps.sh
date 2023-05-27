@@ -17,7 +17,7 @@ conda create --name tf8 python=3.8
 conda activate tf8
 cd $deepmd_source_dir
 pip install tensorflow
-pip install --force-reinstall -e .
+pip install -e .
 
 cd $deepmd_source_dir/source
 mkdir build && cd $_
