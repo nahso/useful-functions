@@ -1,0 +1,24 @@
+    integer, pointer :: ksbl(:,:)
+    real(r8), pointer :: z_w(:,:,:)
+    real(r8), pointer :: hsbl(:,:)
+    real(r8), pointer, dimension (:,:) :: rmask
+    real(r8),  pointer :: Jwtype(:,:)
+    real(r8), dimension(:,:), pointer :: sl_dpth
+    real(r8), pointer, dimension (:,:) :: Ustar
+    real(r8), dimension(:,:), pointer :: Bo
+    real(r8), pointer, dimension (:,:) :: Bosol
+    real(r8), pointer :: Bfsfc(:,:)
+    real(r8), dimension (:,:), pointer :: f1
+    real(r8), dimension (:,:), pointer :: dGm1dS
+    real(r8), dimension (:,:), pointer :: dGt1dS
+    real(r8), dimension (:,:), pointer :: dGs1dS
+    integer :: isalt, itemp, istr, iend, nng
+    real(r8), dimension (:,:), pointer :: wm
+    real(r8), dimension (:,:), pointer :: ws
+    real(r8), pointer :: Akv(:,:,:)
+    real(r8), pointer :: Akt(:,:,:,:)
+    real(r8), dimension (:,:), pointer :: Gt1
+    real(r8), dimension (:,:), pointer :: Gs1
+    real(r8), dimension (:,:), pointer :: Gm1
+    real(r8), pointer :: bustr(:,:)
+    real(r8), pointer :: bvstr(:,:)
