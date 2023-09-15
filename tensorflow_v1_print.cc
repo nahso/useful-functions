@@ -1,3 +1,7 @@
+// Example usage:
+xyz_scatter = tfprint(xyz_scatter, 'xyz_scatter', 'first_xyzscatter', True)
+type_embedding = tfprint(type_embedding, 'type_embedding', 'type_embedding_before_embedding_net', False)
+
 // Print a tensor easily.
 // Usage: op_module.print_identity(<tensor to print>, msg="", filename="", hash=<bool>)
 // op_module: the module that contains the print_identity op. i.e. the return value of tf.load_op_library(str(module_file)).
@@ -23,6 +27,9 @@ def _print_identity_cc(op, dy):
 
 
 // c++ op file:
+#include <fstream>
+#include <iomanip>
+
 REGISTER_OP("PrintIdentity")
     .Attr("T: {float, double, int32}")
     .Input("data: T")
