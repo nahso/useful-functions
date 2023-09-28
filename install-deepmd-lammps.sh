@@ -9,6 +9,7 @@
 #export lammps_root=$(pwd)
 
 export DP_VARANT=cuda
+export CMAKE_ARGS="-DCMAKE_CXX_COMPILER=$(which g++) -DCMAKE_C_COMPILER=$(which gcc)"
 export deepmd_source_dir=$HOME/deepmd-kit
 export deepmd_root=$HOME/deepmd_root
 export lammps_root=$HOME/lammps/lammps-stable_23Jun2022_update4
@@ -17,7 +18,7 @@ conda create --name tf8 python=3.8
 conda activate tf8
 cd $deepmd_source_dir
 pip install tensorflow
-pip install -e .
+pip install .
 
 cd $deepmd_source_dir/source
 mkdir build && cd $_
