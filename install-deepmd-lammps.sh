@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# !! 注意
+# redhat devtool 中的gcc/g++在编译deepmd-kit c++接口时会报错，devtool在编译tensorflow时
+# 也会报错，因此推荐不要用 devtool ，直接用spack安一个gcc
+# 
+# centos7中可能也需要手动编译一遍tensorflow
+
 # download lammps source code:
 #cd ~/lammps
 #wget https://github.com/lammps/lammps/archive/stable_23Jun2022_update4.tar.gz
@@ -8,6 +14,9 @@
 #cd lammps-stable_23Jun2022_update4
 #export lammps_root=$(pwd)
 
+# 关于 OP_CXX_ABI:
+# centos7 的 devtool 无法自动检测到 gcc 的 ABI 版本，需要手动设置，
+# 但是更推荐的办法是用spack自己装一个gcc
 export DP_VARANT=cuda
 export CMAKE_ARGS="-DCMAKE_CXX_COMPILER=$(which g++) -DCMAKE_C_COMPILER=$(which gcc)"
 export deepmd_source_dir=$HOME/deepmd-kit
